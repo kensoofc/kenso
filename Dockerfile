@@ -1,12 +1,7 @@
-FROM quay.io/eypzgod/izumi:latest
-
-RUN git clone https://github.com/sataniceypz/Izumi-v3 /root/bot/
-
-WORKDIR /root/bot/
-
-RUN yarn install --network-concurrency 1
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
-
+FROM quay.io/suhailtechinfo/suhail-v2
+RUN git clone https://github.com/GlobalTechInfo/SUHAIL-XMD /root/SUHAIL-XMD
+# RUN rm -rf /root/SUHAIL-XMD/.git
+WORKDIR /root/SUHAIL-XMD
+RUN npm install || yarn install
+EXPOSE 8000
+CMD ["npm","start" ]
