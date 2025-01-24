@@ -1,7 +1,5 @@
-FROM quay.io/suhailtechinfo/suhail-v2
-RUN git clone https://github.com/GlobalTechInfo/SUHAIL-XMD /root/SUHAIL-XMD
-# RUN rm -rf /root/SUHAIL-XMD/.git
-WORKDIR /root/SUHAIL-XMD
-RUN npm install || yarn install
-EXPOSE 8000
-CMD ["npm","start" ]
+FROM quay.io/lyfe00011/md:beta
+RUN git clone https://github.com/lyfe00011/levanter.git /root/LyFE/
+WORKDIR /root/LyFE/
+RUN yarn install
+CMD ["npm", "start"]
